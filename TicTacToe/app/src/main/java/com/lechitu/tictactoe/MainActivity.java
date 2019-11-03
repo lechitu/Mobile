@@ -2,6 +2,7 @@ package com.lechitu.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView textViewP1;
     private TextView textViewP2;
+    private Button buttonExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         textViewP1 = findViewById(R.id.player1);
         textViewP2 = findViewById(R.id.player2);
+        buttonExit = findViewById(R.id.buttonExit);
 
         for (int i = 0;i < 3;i++){
             for (int j = 0;j < 3;j++){
@@ -43,6 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 newGame();
+            }
+        });
+        buttonExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, home.class);
+                MainActivity.this.startActivity(intent);
             }
         });
     }
