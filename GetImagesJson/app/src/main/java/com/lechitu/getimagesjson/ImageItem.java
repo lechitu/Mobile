@@ -1,0 +1,24 @@
+package com.lechitu.getimagesjson;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class ImageItem {
+
+    private String url;
+    private String description;
+
+    public ImageItem(String url, String description) {
+        this.url = url;
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+}
